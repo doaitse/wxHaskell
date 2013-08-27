@@ -91,7 +91,6 @@ data Type = Int CBaseType
           | Word
           | Word8
           | Word32
-          | Word64
           | Void
           | Char
           | Double

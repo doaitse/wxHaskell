@@ -3,7 +3,7 @@
 --------------------------------------------------------------------------------}
 module Main where
 
-import Control.Exception( onException )
+import Char( toLower )
 import Graphics.UI.WXCore
 
 defaultWidth,defaultHeight :: Int
@@ -86,7 +86,7 @@ imageViewer
                      -- and repaint explicitly (to delete previous stuff)
                      view <- windowGetViewRect s
                      withClientDC s (\dc -> onPaint vbitmap dc view)
-                  `onException` return ()
+                  `catch` (\err -> return ())
       where
         imageFiles
            = [("Image files",["*.bmp","*.jpg","*.gif","*.png"])
